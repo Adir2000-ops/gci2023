@@ -22,3 +22,9 @@ with dados:
         estados['regiao_nome'].unique()
     )
     st.dataframe(estados[estados['regiao_nome'] == regiao])
+with estatistica:
+    variavel = st.selectbox(
+        'Selecione a variavel',
+        ['area', 'populacao', 'idh', 'matricula']
+    )
+    st.table(estados[variavel].describe())
